@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <title>ayomahge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Add your entry GIF later by setting --entry-background in style.css -->
+  <main>
+    <section class="entry-screen" id="entryScreen" aria-label="Click to enter">
+      <button class="enter-button" id="enterButton" type="button">click to enter</button>
+    </section>
+
+    <section class="profile-screen" id="profileScreen" aria-label="ayomahge profile" aria-hidden="true">
+      <div class="profile-content">
+        <div class="identity-row">
+          <div class="avatar" aria-hidden="true">
+            <svg viewBox="0 0 100 100" role="presentation">
+              <circle cx="50" cy="27" r="20" />
+              <path d="M10 91c0-22 16-35 40-35s40 13 40 35c0 5-4 8-9 8H19c-5 0-9-3-9-8Z" />
+            </svg>
+          </div>
+          <div class="identity-copy">
+            <div class="name-line">
+              <span class="verified" title="Verified" aria-label="Verified">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8 14.6 4l3.4-.1 1.1 3.2 2.8 1.9-.9 3.3.9 3.3-2.8 1.9-1.1 3.2-3.4-.1L12 22.8l-2.6-2.2-3.4.1-1.1-3.2-2.8-1.9.9-3.3-.9-3.3 2.8-1.9L6 3.9l3.4.1L12 1.8Z"/><path class="check" d="m8.2 12.1 2.5 2.5 5.2-5.3"/></svg>
+              </span>
+              <h1>ayomahge</h1>
+            </div>
+            <p class="typed-line"><span id="typedText"></span><span class="caret" aria-hidden="true">|</span></p>
+          </div>
+        </div>
+        <div class="stars" aria-hidden="true">✱ ✱ ✱ ✱</div>
+      </div>
+
+      <button class="scroll-cue" id="scrollCue" type="button" aria-label="Scroll for more">
+        <span>SCROLL FOR MORE</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v17m-6-6 6 6 6-6" /></svg>
+      </button>
+    </section>
+
+    <section class="more-section" id="moreSection" aria-label="More">
+      <div class="more-mark" aria-hidden="true">✳</div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
