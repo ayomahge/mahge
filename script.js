@@ -11,6 +11,16 @@ function enterSite() {
     return;
   }
 
+  // Start background music
+  const backgroundMusic = document.getElementById("backgroundMusic");
+
+  if (backgroundMusic) {
+    backgroundMusic.volume = 0.35;
+    backgroundMusic.play().catch((error) => {
+      console.log("Music playback was blocked:", error);
+    });
+  }
+
   entryScreen.classList.add("leaving");
   document.body.classList.add("profile-active");
 
