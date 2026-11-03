@@ -4,34 +4,42 @@ const profileScreen = document.getElementById("profileScreen");
 const scrollCue = document.getElementById("scrollCue");
 const typedText = document.getElementById("typedText");
 const moreSection = document.getElementById("moreSection");
+const backgroundMusic = document.getElementById("backgroundMusic");
 
-// Enter website
+// ENTER WEBSITE
 function enterSite() {
-  if (!entryScreen || !profileScreen || document.body.classList.contains("profile-active")) {
+  if (
+    !entryScreen ||
+    !profileScreen ||
+    document.body.classList.contains("profile-active")
+  ) {
     return;
   }
 
   // Start background music
-  const backgroundMusic = document.getElementById("backgroundMusic");
-
   if (backgroundMusic) {
     backgroundMusic.volume = 0.35;
+
     backgroundMusic.play().catch((error) => {
       console.log("Music playback was blocked:", error);
     });
   }
 
+  // Transition into profile
   entryScreen.classList.add("leaving");
   document.body.classList.add("profile-active");
 
   profileScreen.classList.add("visible");
   profileScreen.setAttribute("aria-hidden", "false");
 
+  // Start subtitle animation
   runTypewriter();
 }
 
+// CLICK ANYWHERE ON ENTRY SCREEN
 entryScreen?.addEventListener("click", enterSite);
 
+// KEYBOARD SUPPORT
 entryScreen?.addEventListener("keydown", (event) => {
   if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
@@ -39,16 +47,16 @@ entryScreen?.addEventListener("keydown", (event) => {
   }
 });
 
-// Subtitle typewriter
+// SUBTITLE TYPEWRITER
 const subtitle = "ok is the hardest, istg";
+
 let subtitleIndex = 0;
 let deletingSubtitle = false;
 
 function runTypewriter() {
   if (!typedText) return;
 
-  const currentText = subtitle.substring(0, subtitleIndex);
-  typedText.textContent = currentText;
+  typedText.textContent = subtitle.substring(0, subtitleIndex);
 
   if (!deletingSubtitle && subtitleIndex < subtitle.length) {
     subtitleIndex++;
@@ -65,8 +73,9 @@ function runTypewriter() {
   }
 }
 
-// Animated browser tab title
+// ANIMATED BROWSER TAB TITLE
 const tabTitle = "@ayomahge";
+
 let titleIndex = 0;
 let deletingTitle = false;
 
@@ -90,7 +99,7 @@ function animateTabTitle() {
 
 animateTabTitle();
 
-// Scroll cue
+// SCROLL BUTTON
 scrollCue?.addEventListener("click", () => {
   moreSection?.scrollIntoView({
     behavior: "smooth",
@@ -98,41 +107,52 @@ scrollCue?.addEventListener("click", () => {
   });
 });
 
-// Background movement while scrolling
+// BACKGROUND MOVEMENT WHILE SCROLLING
 let scrollTicking = false;
 
-window.addEventListener("scroll", () => {
-  if (scrollTicking) return;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (scrollTicking) return;
 
-  scrollTicking = true;
+    scrollTicking = true;
 
-  window.requestAnimationFrame(() => {
-    const drift = Math.min(window.scrollY * 0.16, 180);
-    document.body.style.setProperty("--background-drift", `${drift}px`);
-    scrollTicking = false;
-  });
-}, { passive: true });
+    window.requestAnimationFrame(() => {
+      const drift = Math.min(window.scrollY * 0.16, 180);
 
-// Lower section fade-in
-if (moreSection && "IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        moreSection.classList.add("in-view");
-      }
+      document.body.style.setProperty(
+        "--background-drift",
+        `${drift}px`
+      );
+
+      scrollTicking = false;
     });
-  }, { threshold: 0.2 });
+  },
+  { passive: true }
+);
+
+// LOWER SECTION FADE-IN
+if (moreSection && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          moreSection.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
   observer.observe(moreSection);
 }
 
-// Right-click deterrent
+// RIGHT-CLICK DETERRENT
 document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
   showStealMessage();
 });
 
-// Message displayed when someone tries to right-click
 function showStealMessage() {
   let message = document.getElementById("stealMessage");
 
@@ -166,20 +186,14 @@ function showStealMessage() {
   message.style.opacity = "1";
 
   clearTimeout(window.stealMessageTimeout);
+
   window.stealMessageTimeout = setTimeout(() => {
     message.style.opacity = "0";
   }, 1800);
 }
 
-// Console warning
+// CONSOLE MESSAGE
 console.log(
   "%cquit tryna steal my shi",
   "color: white; background: #111; font-size: 18px; font-weight: bold; padding: 12px 18px; border-radius: 6px;"
 );
-.enter-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
