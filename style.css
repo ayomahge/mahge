@@ -302,12 +302,16 @@ h1 {
   transform: translateY(0);
 }
 
+
 .managed-content h2 {
-  margin: 0 0 18px;
-  color: rgba(255,255,255,.85);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -.06em;
+  margin: 0 0 30px;
+  color: #fff;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 900;
+  letter-spacing: -.09em;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: 0 0 22px rgba(255,255,255,.3);
 }
 
 .managed-card {
