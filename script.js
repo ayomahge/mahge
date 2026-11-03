@@ -183,14 +183,3 @@ console.log(
   flex-direction: column;
   align-items: center;
 }
-
-.volume-warning {
-  margin-top: -8px;
-  color: rgba(255, 255, 255, 0.55);
-  font-family: 'Space Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: lowercase;
-  text-shadow: 0 1px 6px #000;
-  pointer-events: none;
-}
