@@ -455,3 +455,46 @@ h1 {
   color: #fff;
   text-shadow: 0 0 22px rgba(255,255,255,.4);
 }
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+}
+
+.stars a {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,.8));
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.stars a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px white);
+}
+
+.stars a svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.stars a:last-of-type svg {
+  fill: white;
+  stroke: none;
+}
+
+.stars a:first-of-type svg .social-dot {
+  fill: white;
+  stroke: none;
+}
