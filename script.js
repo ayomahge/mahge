@@ -176,3 +176,21 @@ console.log(
   "%cquit tryna steal my shi",
   "color: white; background: #111; font-size: 18px; font-weight: bold; padding: 12px 18px; border-radius: 6px;"
 );
+.enter-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.volume-warning {
+  margin-top: -8px;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-shadow: 0 1px 6px #000;
+  pointer-events: none;
+}
