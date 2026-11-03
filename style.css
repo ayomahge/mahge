@@ -441,3 +441,17 @@ h1 {
     transition-duration: .01ms!important;
   }
 }
+
+/* MANAGED SECTION HEADING */
+#moreSection .managed-content h2 {
+  display: block;
+  width: 100%;
+  text-align: center !important;
+  font-size: 64px !important;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -5px;
+  margin: 0 0 35px;
+  color: #fff;
+  text-shadow: 0 0 22px rgba(255,255,255,.4);
+}
