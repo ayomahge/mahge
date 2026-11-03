@@ -25,7 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Main background GIF */
 body.profile-active {
   isolation: isolate;
 }
@@ -50,12 +49,6 @@ body.profile-active::after {
   background: rgba(0, 0, 0, .12);
 }
 
-button {
-  color: inherit;
-  font: inherit;
-}
-
-/* Entry screen */
 .entry-screen {
   position: fixed;
   z-index: 5;
@@ -72,16 +65,14 @@ button {
   background-repeat: no-repeat;
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity 850ms cubic-bezier(.22, .7, .2, 1),
-    visibility 850ms;
+  transition: opacity 850ms cubic-bezier(.22,.7,.2,1), visibility 850ms;
 }
 
 .entry-screen::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, .28);
+  background: rgba(0,0,0,.28);
   pointer-events: none;
 }
 
@@ -92,16 +83,13 @@ button {
   padding: 18px 24px;
   background: transparent;
   color: #fff;
-  font-size: clamp(17px, 2vw, 25px);
+  font-size: clamp(17px,2vw,25px);
   font-weight: 700;
   letter-spacing: -.07em;
   cursor: inherit;
   pointer-events: none;
-  text-shadow: 0 1px 12px rgba(255, 255, 255, .28);
-  transition:
-    opacity .25s ease,
-    transform .35s ease,
-    letter-spacing .35s ease;
+  text-shadow: 0 1px 12px rgba(255,255,255,.28);
+  transition: opacity .25s ease, transform .35s ease, letter-spacing .35s ease;
 }
 
 .entry-screen:hover .enter-button {
@@ -110,7 +98,7 @@ button {
 }
 
 .entry-screen:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, .8);
+  outline: 2px solid rgba(255,255,255,.8);
   outline-offset: -8px;
 }
 
@@ -125,7 +113,6 @@ button {
   opacity: 0;
 }
 
-/* Profile screen */
 .profile-screen {
   position: relative;
   z-index: 1;
@@ -136,17 +123,14 @@ button {
   opacity: 0;
   visibility: hidden;
   transform: scale(1.025);
-  transition:
-    opacity 950ms ease,
-    transform 1200ms cubic-bezier(.2, .7, .2, 1),
-    visibility 950ms;
+  transition: opacity 950ms ease, transform 1200ms cubic-bezier(.2,.7,.2,1), visibility 950ms;
 }
 
 .profile-screen::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, .12);
+  background: rgba(0,0,0,.12);
   pointer-events: none;
 }
 
@@ -159,11 +143,10 @@ button {
 .profile-content {
   position: relative;
   z-index: 1;
-  width: min(92vw, 650px);
+  width: min(92vw,650px);
   transform: translateY(-1vh);
 }
 
-/* Avatar and username */
 .identity-row {
   display: flex;
   align-items: center;
@@ -177,7 +160,7 @@ button {
   flex: 0 0 86px;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, .12);
+  box-shadow: 0 0 15px rgba(255,255,255,.12);
 }
 
 .avatar img {
@@ -202,20 +185,19 @@ button {
 h1 {
   margin: 0;
   color: #fff;
-  font-size: clamp(17px, 1.65vw, 21px);
+  font-size: clamp(17px,1.65vw,21px);
   line-height: 1.2;
   letter-spacing: -.07em;
   font-weight: 700;
-  text-shadow: 0 2px 9px rgba(0, 0, 0, .8);
+  text-shadow: 0 2px 9px rgba(0,0,0,.8);
 }
 
-/* Verified badge */
 .verified {
   display: inline-grid;
   place-items: center;
   width: 21px;
   height: 21px;
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, .9));
+  filter: drop-shadow(0 0 3px rgba(255,255,255,.9));
   animation: badgeGlow 3.4s ease-in-out infinite;
 }
 
@@ -233,12 +215,11 @@ h1 {
   stroke-linejoin: round;
 }
 
-/* Typewriter subtitle */
 .typed-line {
   min-height: 17px;
   margin: 4px 0 0;
-  color: rgba(255, 255, 255, .67);
-  font-family: Arial, sans-serif;
+  color: rgba(255,255,255,.67);
+  font-family: Arial,sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -.025em;
@@ -248,22 +229,20 @@ h1 {
 .caret {
   display: inline-block;
   margin-left: 1px;
-  animation: blink 1s steps(2, start) infinite;
+  animation: blink 1s steps(2,start) infinite;
 }
 
-/* Stars */
 .stars {
   margin-top: 47px;
   text-align: center;
   color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: clamp(27px, 3vw, 38px);
+  font-family: Arial,sans-serif;
+  font-size: clamp(27px,3vw,38px);
   font-weight: 900;
   letter-spacing: .08em;
-  text-shadow: 0 0 13px rgba(255, 255, 255, .28);
+  text-shadow: 0 0 13px rgba(255,255,255,.28);
 }
 
-/* Scroll cue */
 .scroll-cue {
   position: absolute;
   z-index: 2;
@@ -281,7 +260,7 @@ h1 {
 }
 
 .scroll-cue span {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Permanent Marker',cursive;
   font-size: 11px;
   white-space: nowrap;
   text-shadow: 0 1px 7px #000;
@@ -298,61 +277,126 @@ h1 {
   animation: arrowBob 1.7s ease-in-out infinite;
 }
 
-/* Lower section */
+/* People I manage section */
+
 .more-section {
   position: relative;
   z-index: 1;
   min-height: 100svh;
   display: grid;
   place-items: center;
+  padding: 70px 20px;
   background: transparent;
   scroll-margin-top: 0;
 }
 
-.more-mark {
-  color: rgba(255, 255, 255, .12);
-  font-size: 30px;
+.managed-content {
+  width: min(100%, 640px);
   opacity: 0;
-  transform: translateY(22px);
-  transition:
-    opacity 900ms ease,
-    transform 900ms cubic-bezier(.2, .7, .2, 1);
+  transform: translateY(25px);
+  transition: opacity 900ms ease, transform 900ms cubic-bezier(.2,.7,.2,1);
 }
 
-.more-section.in-view .more-mark {
+.more-section.in-view .managed-content {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Animations */
-@keyframes badgeGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 2px rgba(255, 255, 255, .55));
-  }
+.managed-content h2 {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.85);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.06em;
+}
 
+.managed-card {
+  min-height: 279px;
+  width: 100%;
+  padding: 34px 20px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(19,19,19,.94);
+  border: 1px solid rgba(255,255,255,.025);
+  border-radius: 20px;
+  box-shadow: 0 12px 45px rgba(0,0,0,.22);
+  transition: transform .3s ease, background .3s ease;
+}
+
+.managed-card:hover {
+  transform: translateY(-4px);
+  background: rgba(23,23,23,.97);
+}
+
+.managed-avatar {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 0 22px rgba(255,255,255,.12);
+}
+
+.managed-card h3 {
+  margin: 15px 0 11px;
+  color: #fff;
+  font-family: Arial,sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  text-shadow: 0 0 16px rgba(255,255,255,.65);
+}
+
+.platform-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.platform-links a {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-decoration: none;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,.7));
+  transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+}
+
+.platform-links svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.platform-links a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 11px rgba(255,255,255,1));
+}
+
+@keyframes badgeGlow {
+  0%,100% {
+    filter: drop-shadow(0 0 2px rgba(255,255,255,.55));
+  }
   50% {
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, .95));
+    filter: drop-shadow(0 0 6px rgba(255,255,255,.95));
   }
 }
 
 @keyframes blink {
-  to {
-    visibility: hidden;
-  }
+  to { visibility: hidden; }
 }
 
 @keyframes arrowBob {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(5px);
-  }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
 }
 
-/* Mobile */
-@media (max-width: 520px) {
+@media (max-width:520px) {
   .avatar {
     width: 69px;
     height: 69px;
@@ -370,16 +414,26 @@ h1 {
   .scroll-cue {
     bottom: 20px;
   }
+
+  .managed-card {
+    min-height: 255px;
+  }
+
+  .managed-avatar {
+    width: 105px;
+    height: 105px;
+  }
+
+  .managed-card h3 {
+    font-size: 30px;
+  }
 }
 
-/* Reduced motion accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior: auto!important;
+    animation-duration: .01ms!important;
+    animation-iteration-count: 1!important;
+    transition-duration: .01ms!important;
   }
 }
